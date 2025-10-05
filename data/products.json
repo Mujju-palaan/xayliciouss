@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Car Shampoo",
+    "price": 199,
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "title": "Glass Cleaner",
+    "price": 149,
+    "inStock": false
+  },
+  {
+    "id": 3,
+    "title": "effdfdv",
+    "price": 500,
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "title": "python",
+    "price": 9000,
+    "inStock": true
+  }
+]
