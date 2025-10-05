@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { Container } from './Container'
 import backgroundImage from '@/public/bg/background-faqs.jpg'
-import Link from 'next/link';
+// import Link from 'next/link';
 import {useState} from 'react';
 import {ChevronUpIcon, ChevronDownIcon} from 'lucide-react';
 
@@ -38,7 +38,7 @@ const faqs = [
 const Faqpage = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
 
-  const toggleQuestion = (index : any) => {
+  const toggleQuestion = (index: any) => {
     setOpenQuestion((openQuestion === index) ? null : index);
   };
 
