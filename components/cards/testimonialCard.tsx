@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface TestimonialProps {
@@ -20,7 +21,17 @@ const Testimonial: React.FC<TestimonialProps> = ({
         <li className="bg-gray-100 p-4 rounded-xl">
           <figure>
             <div className="flex items-center gap-x-4">
-              <img src={avatar} className="w-16 h-16 rounded-full" />
+              {/* <img src={avatar} className="w-16 h-16 rounded-full" /> */}
+              <Image 
+                className="w-16 h-16 rounded-full"
+                src={avatar}
+                width={60}
+                height={60}
+                alt={`Testimonial`}
+                priority
+                unoptimized // ⚠️ skips Next.js image optimization
+
+              />
               <div>
                 <span className="block text-gray-800 font-semibold">
                   {name}
