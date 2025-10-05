@@ -4,6 +4,7 @@ import "./globals.css";
 import Whatsapp from "@/components/services/whatsapp/Whatsapp";
 import Navbar from "@/components/Nav-footer/Navbar";
 import Footer from "@/components/Nav-footer/Footer";
+import Breadcrumb from "@/components/cards/Breadcrumb";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <Breadcrumb />
         {children}
         <Whatsapp />
         <Footer />

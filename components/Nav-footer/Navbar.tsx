@@ -194,6 +194,7 @@ const Navbar = () => {
                 width={120}
                 height={40}
                 alt="xayliciouss logo"
+                priority 
               />
             </Link>
             {/* Mobile toggle */}
