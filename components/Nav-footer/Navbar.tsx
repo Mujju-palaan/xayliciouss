@@ -181,7 +181,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`relative z-20 bg-darkgrey w-full md:static md:text-sm md:border-none ${
+        className={`relative z-20 bg-white 500 w-full md:static md:text-sm md:border-none ${
           state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
         }`}
       >
@@ -190,9 +190,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/">
               <Image
-                src="/company/logoo.png"
-                width={120}
-                height={40}
+                src="/company/logo_h.png"
+                width={200}
+                height={80}
                 alt="xayliciouss logo"
                 priority 
               />
@@ -200,7 +200,7 @@ const Navbar = () => {
             {/* Mobile toggle */}
             <div className="md:hidden">
               <button
-                className="text-white hover:text-gray-800"
+                className="text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
                 onClick={() => setState(!state)}
                 aria-label="Toggle menu"
               >

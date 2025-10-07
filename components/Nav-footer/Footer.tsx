@@ -14,7 +14,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-darkgrey" aria-labelledby="footer-heading">
+    <footer className="shadow-xl" aria-labelledby="footer-heading">
       <div>
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="mx-auto max-w-screen-2xl px-6 lg:px-8 pt-24 pb-14">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <Image
-              src="/company/logo_transperent.png"
+              src="/company/logo_f.png"
               alt="xayliciouss logo"
               width={250}
               height={250}

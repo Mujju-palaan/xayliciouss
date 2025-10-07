@@ -1,9 +1,17 @@
-import React from 'react'
+// pages/privacy-policy.tsx
+import React from "react";
+import PolicyPage from "@/components/services/PolicyPage";
+import { PrivacypolicyData } from "@/data/policiesData";
 
-const Privacypage = () => {
+
+const Privacypage: React.FC = () => {
   return (
-    <div>Privacypage</div>
-  )
-}
+    <PolicyPage
+      data={PrivacypolicyData}
+      mainTitle="Privacy Policy"
+      lastUpdated="7th Oct, 2025"
+    />
+  );
+};
 
-export default Privacypage
+export default Privacypage;
