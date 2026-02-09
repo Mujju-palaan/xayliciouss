@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/HeaderFooter/Navbar";
+import Navbar from "@/components/headerfooter/Navbar";
+import StoreProvider from '../app/slice/StoreProvider'
 
 /* ----------------------------- Fonts Setup ----------------------------- */
 
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}
       >
+        <StoreProvider>
         <div
           className="min-h-screen bg-gradient-to-b
           from-[#b06476]
@@ -47,6 +49,7 @@ export default function RootLayout({
           <div className="pt-20"></div>
           {children}
         </div>
+        </StoreProvider>
       </body>
     </html>
   );

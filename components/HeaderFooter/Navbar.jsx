@@ -33,6 +33,8 @@ export default function Navbar() {
     return () => ctx.revert();
   }, []);
 
+  const totalItems = 3;
+
   return (
     <header
       ref={headerRef}
@@ -63,10 +65,21 @@ export default function Navbar() {
         </nav>
         <div className="flex items-center gap-3">
           <button
+            // onClick={handleDrawerOpen}
             aria-label="Cart"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
+            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
           >
             <AiOutlineShoppingCart className="text-lg text-white" />
+
+            {/* Cart Count Badge */}
+            {totalItems  && (
+              <span
+            className="absolute -top-0 -right-0 flex items-center justify-center h-4 w-4
+                rounded-full bg-red-600 text-xs font-bold text-white"
+          >
+            {totalItems}
+          </span>
+            )}
           </button>
 
           <button
