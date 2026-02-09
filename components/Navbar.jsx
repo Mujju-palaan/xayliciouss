@@ -63,11 +63,11 @@ export default function Navbar() {
           <button
             className="h-9 w-9 rounded-full bg-white/15 hover:bg-white/25 sm:h-10 sm:w-10"
             aria-label="Cart"
-          />
+          ></button>
           <button
             className="h-9 w-9 rounded-full bg-white/15 hover:bg-white/25 sm:h-10 sm:w-10"
             aria-label="Account"
-          />
+          ></button>
         </div>
       </div>
     </header>
