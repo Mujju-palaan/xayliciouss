@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
 
 export default function Navbar() {
   const headerRef = useRef(null);
@@ -61,13 +63,18 @@ export default function Navbar() {
         </nav>
         <div className="flex items-center gap-3">
           <button
-            className="h-9 w-9 rounded-full bg-white/15 hover:bg-white/25 sm:h-10 sm:w-10"
             aria-label="Cart"
-          ></button>
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
+          >
+            <AiOutlineShoppingCart className="text-lg text-white" />
+          </button>
+
           <button
-            className="h-9 w-9 rounded-full bg-white/15 hover:bg-white/25 sm:h-10 sm:w-10"
             aria-label="Account"
-          ></button>
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
+          >
+            <CgProfile className="text-lg text-white" />
+          </button>
         </div>
       </div>
     </header>
