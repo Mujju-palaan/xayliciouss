@@ -5,9 +5,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const headerRef = useRef(null);
+  const items = useSelector((state)=>state.items.items)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -77,7 +79,7 @@ export default function Navbar() {
             className="absolute -top-0 -right-0 flex items-center justify-center h-4 w-4
                 rounded-full bg-red-600 text-xs font-bold text-white"
           >
-            {totalItems}
+            {items.reduce((sum, item) => sum + item.quantity, 0)}
           </span>
             )}
           </button>
