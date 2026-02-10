@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/headerfooter/Navbar";
 import StoreProvider from "../app/slice/StoreProvider";
 
 /* ----------------------------- Fonts Setup ----------------------------- */
@@ -44,7 +43,7 @@ export default function RootLayout({
           to-[#e6a9b4]
           text-[#f7e7eb]"
           >
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="pt-20"></div>
             {children}
           </div>
