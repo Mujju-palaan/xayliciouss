@@ -3,13 +3,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
-import { useSelector } from "react-redux";
+import CartDrawer from "./CartDrawer";
+import NavProfile from "./NavProfile";
 
 export default function Navbar() {
   const headerRef = useRef(null);
-  const items = useSelector((state)=>state.items.items)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -66,30 +64,8 @@ export default function Navbar() {
           </Link>
         </nav>
         <div className="flex items-center gap-3">
-          <button
-            // onClick={handleDrawerOpen}
-            aria-label="Cart"
-            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
-          >
-            <AiOutlineShoppingCart className="text-lg text-white" />
-
-            {/* Cart Count Badge */}
-            {totalItems  && (
-              <span
-            className="absolute -top-0 -right-0 flex items-center justify-center h-4 w-4
-                rounded-full bg-red-600 text-xs font-bold text-white"
-          >
-            {items.reduce((sum, item) => sum + item.quantity, 0)}
-          </span>
-            )}
-          </button>
-
-          <button
-            aria-label="Account"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/40 sm:h-10 sm:w-10"
-          >
-            <CgProfile className="text-lg text-white" />
-          </button>
+          <CartDrawer />
+          <NavProfile />
         </div>
       </div>
     </header>
