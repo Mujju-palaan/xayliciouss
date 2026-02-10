@@ -2,16 +2,14 @@ import React from "react";
 import { Button, Drawer, Box } from "@mui/material";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
-// import Ecart_SideBar from "./Ecart_SideBar";
+import MenuInCartCard from "../card/MenuInCartCard";
 
-const DRAWER_WIDTH = 370;
+const DRAWER_WIDTH = 300;
 
 const CartDrawer = () => {
   const [open, setOpen] = React.useState(false);
-
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
-
   const items = useSelector((state) => state.items.items || []);
 
   const totalItems = items.reduce(
@@ -34,15 +32,8 @@ const CartDrawer = () => {
         {/* Cart Count Badge */}
         {totalItems > 0 && (
           <span
-            className="
-              absolute -top-0 -right-0
-              flex items-center justify-center
-              h-4 w-4
-              rounded-full
-              bg-red-600
-              text-[10px] font-bold text-white
-            "
-          >
+            className="absolute -top-0 -right-0 flex items-center justify-center h-4 w-4
+              rounded-full bg-red-600 text-[10px] font-bold text-white">
             {totalItems}
           </span>
         )}
@@ -68,14 +59,24 @@ const CartDrawer = () => {
         {/* Drawer Content */}
         <div className="p-4">
           {items.length === 0 ? (
-            <p className="text-gray-500 text-sm">Your cart is empty.</p>
+            <p
+              className="flex p-8 text-center text-gray-500 text-2xl font-semibold font-sans
+            justify-center items-center"
+            >
+              Your Xayliciouss cart is empty.
+            </p>
           ) : (
-            <div>
-              {/* Replace with your component */}
-              {/* <Ecart_SideBar /> */}
-              <p className="text-sm text-gray-700">
-                Cart items will render here
-              </p>
+            <div className="flex flex-col justify-center items-center gap-2">
+              {items.map((item) => (
+                <MenuInCartCard
+                  key={item.id}
+                  id={item.id}
+                  image={item.image}
+                  title={item.title}
+                  price={item.price}
+                  quantity={item.quantity}
+                />
+              ))}
             </div>
           )}
         </div>

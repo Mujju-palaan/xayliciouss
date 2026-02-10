@@ -1,13 +1,15 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CartDrawer from "./CartDrawer";
-import NavProfile from "./NavProfile";
+import ProfileLoggedIn from "./ProfileLoggedIn";
+import ProfileNotLoggedIn from "./ProfileNotLoggedIn";
 
 export default function Navbar() {
   const headerRef = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +67,7 @@ export default function Navbar() {
         </nav>
         <div className="flex items-center gap-3">
           <CartDrawer />
-          <NavProfile />
+          {isLoggedIn ? <ProfileNotLoggedIn /> : <ProfileLoggedIn />}
         </div>
       </div>
     </header>
