@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/headerfooter/Navbar";
-import StoreProvider from '../app/slice/StoreProvider'
+import StoreProvider from "../app/slice/StoreProvider";
 
 /* ----------------------------- Fonts Setup ----------------------------- */
 
@@ -35,20 +35,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StoreProvider>
-        <div
-          className="min-h-screen bg-gradient-to-b
+          <div
+            className="min-h-screen bg-gradient-to-b
           from-[#b06476]
           via-[#c97b8f]
           to-[#e6a9b4]
           text-[#f7e7eb]"
-        >
-          <Navbar />
-          <div className="pt-20"></div>
-          {children}
-        </div>
+          >
+            <Navbar />
+            <div className="pt-20"></div>
+            {children}
+          </div>
         </StoreProvider>
       </body>
     </html>
