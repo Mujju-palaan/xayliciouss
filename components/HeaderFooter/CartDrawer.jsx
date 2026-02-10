@@ -73,6 +73,7 @@ const CartDrawer = () => {
                   id={item.id}
                   image={item.image}
                   title={item.title}
+                  description={item.description}
                   price={item.price}
                   quantity={item.quantity}
                 />

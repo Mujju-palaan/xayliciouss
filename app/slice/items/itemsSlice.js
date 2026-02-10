@@ -1,7 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [],
+  items: [
+    {
+      id: 0,
+      image: '/home/Gemini_Generated_Image_un8grhun8grhun8g.png',
+      title: 'Burger',
+      description: "yummy",
+      price: 2344,
+      quantity: 10,
+    },
+  ],
 };
 
 export const itemsSlice = createSlice({
@@ -20,7 +29,7 @@ export const itemsSlice = createSlice({
           id: action.payload.id,
           image: action.payload.image,
           title: action.payload.title,
-          description: action.payload.description || "",
+          description: action.payload.description || "yummy",
           price: Number(action.payload.price),
           quantity: 1,
         };
@@ -29,26 +38,30 @@ export const itemsSlice = createSlice({
       }
     },
 
-    IncreaseQuantity:(state, action) => {
-      const item = state.items.find((item)=> item.id === action.payload.id)
-      if(item){
-        item.quantity += 1
+    IncreaseQuantity: (state, action) => {
+      const item = state.items.find((item) => item.id === action.payload.id);
+      if (item) {
+        item.quantity += 1;
       }
     },
 
-    DecreaseQuantity:(state, action) => {
-      const item = state.items.find((item)=> item.id === action.payload.id)
-      if(item){
-        item.quantity -= 1
+    DecreaseQuantity: (state, action) => {
+      const item = state.items.find((item) => item.id === action.payload.id);
+      if (item.quantity > 0) {
+        item.quantity -= 1;
       }
     },
     RemoveFromCart: (state, action) => {
-      state.items = state.items.filter((item)=> item.id !== action.payload.id)
+      state.items = state.items.filter((item) => item.id !== action.payload.id);
     },
-
   },
 });
 
-export const { addItemsToCart, IncreaseQuantity, DecreaseQuantity, RemoveFromCart} = itemsSlice.actions;
+export const {
+  addItemsToCart,
+  IncreaseQuantity,
+  DecreaseQuantity,
+  RemoveFromCart,
+} = itemsSlice.actions;
 
 export default itemsSlice.reducer;

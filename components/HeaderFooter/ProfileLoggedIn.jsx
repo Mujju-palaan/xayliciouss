@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
+import { TbLogout } from "react-icons/tb";
+import { IoSettingsSharp } from "react-icons/io5";
+import { ImProfile } from "react-icons/im";
+import { FaHeart } from "react-icons/fa";
 
 const ProfileLoggedIn = () => {
   const handleLogout = () => {
@@ -19,7 +23,7 @@ const ProfileLoggedIn = () => {
       >
         <div className="w-10 rounded-full">
           <Image
-          className="rounded-full"
+            className="rounded-full"
             fill
             alt="User Avatar"
             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
@@ -33,21 +37,30 @@ const ProfileLoggedIn = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-36 p-2 shadow text-black"
       >
         <li>
-          <button className="justify-between w-full">
+          <button className="w-full text-error">
+            <ImProfile />
             Profile
+            {/* <span className="badge badge-primary">New</span> */}
+          </button>
+        </li>
+        <li>
+          <button className="w-full text-error">
+            <FaHeart />
+            Watchlist
             {/* <span className="badge badge-primary">New</span> */}
           </button>
         </li>
 
         <li>
-          <button className="w-full">Settings</button>
+          <button className="w-full text-error">
+            <IoSettingsSharp />
+            Settings
+          </button>
         </li>
 
         <li>
-          <button
-            onClick={handleLogout}
-            className="w-full text-error"
-          >
+          <button onClick={handleLogout} className="w-full text-error">
+            <TbLogout />
             Logout
           </button>
         </li>
@@ -55,6 +68,5 @@ const ProfileLoggedIn = () => {
     </div>
   );
 };
-
 
 export default ProfileLoggedIn;
